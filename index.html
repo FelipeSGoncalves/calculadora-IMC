@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>IMC</title>    
+</head>
+<body>
+    <div id="box">
+        <h1>Calcular IMC</h1>
+            
+            <p>Qual é sua altura em cm?(Ex: 1.80)</p>
+                <input type="text" id="altura">
+            
+            <p>Qual o seu peso em kilos?(Ex: 78)</p>
+                <input type="text" id="peso"> 
+
+        <button id="calcular">Calcular</button> 
+        <p> Seu IMC é: <span id="imc"></span></p>
+
+    </div>
+    <script type="text/javascript">
+        calcular = document.getElementById("calcular");
+	    altura = document.getElementById("altura");
+	    peso = document.getElementById("peso");
+        imcx = document.getElementById("imc");
+
+	    calcular.onclick = function(){
+		    if(peso.value!="" && altura.value!=""){
+			    imcx = (peso.value / (altura.value* altura.value));
+			    imc.innerHTML = imcx;
+                if(imc<=24.9){ 
+                    alert("Peso ideal!");
+                }
+		        else if(imc>=25){ 
+                    alert("Acima do peso!"); 
+                }
+            }else{
+			    alert("Insira os valores para o cálculo do IMC!")
+		    }
+        };
+    </script>
+</body>
+</html>
